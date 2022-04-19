@@ -24,9 +24,9 @@ const server = app.listen(port, () => {
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Insert info into database at any endpoint. this will change based on what the assignment calls for
+// Insert info into interaction database at any endpoint. this will change based on what the assignment calls for
 app.use((req, res, next) => {
-    const stmt = db.prepare('INSERT INTO accesslog (remoteaddr, remoteuser, time, method, url, protocol, httpversion, secure, status, referer, useragent) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)')
+    const stmt = db.prepare('INSERT INTO interactionlog (remoteaddr, remoteuser, time, method, url, protocol, httpversion, secure, status, referer, useragent) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)')
     let secure;
     if (req.secure) {
         secure = 'true';
