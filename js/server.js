@@ -20,7 +20,7 @@ const server = app.listen(port, () => {
     console.log('App is running on port %PORT%'.replace('%PORT%', port))
 })
 
-// idk what this stuff is its just on all my other stuff so yeah
+// idk what this stuff is its just on all my other stuff
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -36,3 +36,4 @@ app.use((req, res, next) => {
     const info = stmt.run(req.ip, req.user, Date.now(), req.method, req.url, req.protocol, req.httpVersion, secure, res.statusCode, req.headers['referer'], req.headers['user-agent'])
     next()
 });
+
