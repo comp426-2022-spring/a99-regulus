@@ -23,6 +23,10 @@ const server = app.listen(port, () => {
 // idk what this stuff is its just on all my other stuff
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+// Serve static HTML files
+app.use(express.static('./public'));
+// Make Express use its own built-in body parser to handle JSON
+app.use(express.json());
 
 // Insert info into interaction database at any endpoint. this will change based on what the assignment calls for
 app.use((req, res, next) => {
