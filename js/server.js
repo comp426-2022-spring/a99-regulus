@@ -24,7 +24,7 @@ const server = app.listen(port, () => {
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Serve static HTML files
-app.use(express.static('./public'));
+app.use(express.static('./'));
 // Make Express use its own built-in body parser to handle JSON
 app.use(express.json());
 
