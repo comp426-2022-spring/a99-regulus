@@ -37,3 +37,31 @@ app.use((req, res, next) => {
     next()
 });
 
+// Insert info in JSON into readable JSON access file
+app.use((req, res, next) => {
+    let accessData = {
+        remoteaddr: req.ip,
+        remoteuser: req.user,
+        time: Date.now(),
+        method: req.method,
+        url: req.url,
+        protocol: req.protocol,
+        httpversion: req.httpVersion,
+        status: res.statusCode,
+        referrer: req.headers['referer'],
+        useragent: req.headers['user-agent']
+    }
+    let accessJson = fs.readFileSync("./data/log/access.json","utf-8");
+    let access = JSON.parse(accessJson);
+    const arr = Array.from(access)
+    arr.push(accessData);
+    accessJson = JSON.stringify(arr);
+    fs.writeFileSync("./data/log/access.json",accessJson,"utf-8");
+    next()
+})
+
+app.get('/app', (req, res) => {
+    res.setHeader('Content-Type', 'text/plain');
+    res.setHeader('status', 200)
+    res.end('200 OK')
+})

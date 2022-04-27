@@ -16,7 +16,7 @@ if (row === undefined) {
     const sqlInit = `
         CREATE TABLE interactionlog ( remoteaddr TEXT, remoteuser TEXT, time TEXT, method TEXT, 
             url TEXT, protocol TEXT, httpversion TEXT, secure TEXT, status TEXT, referer TEXT, useragent TEXT );
-        INSERT INTO accesslog (remoteaddr, remoteuser) VALUES ('192.168.1.1','exampleUser');
+        INSERT INTO interactionlog (remoteaddr, remoteuser) VALUES ('192.168.1.1','exampleUser');
     `;
 // Execute SQL commands that we just wrote above.
     db.exec(sqlInit);
