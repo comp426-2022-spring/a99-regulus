@@ -11,6 +11,7 @@ const express = require('express')
 const app = express()
 const args = minimist(process.argv)
 const db = require('./database.js');
+const usersdb = require('./users.js');
 const morgan = require('morgan');
 const fs = require('fs');
 
@@ -64,8 +65,17 @@ app.use((req, res, next) => {
     next()
 })
 
+// Main app endpoint
 app.get('/app', (req, res) => {
     res.setHeader('Content-Type', 'text/plain');
     res.setHeader('status', 200)
     res.end('200 OK')
+})
+
+// POST endpoint to create a user in users.db
+app.post('/app/user/create', (req, res, next) => {
+    const userid = req.body.userid
+    const pass = req.body.pass
+    const stmt = db.prepare('INSERT INTO userslog (userid, pass) VALUES (?, ?)');
+    const info = stmt.run(userid, pass);
 })

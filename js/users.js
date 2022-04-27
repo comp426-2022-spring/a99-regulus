@@ -1,11 +1,11 @@
-// Database for tracking interactions with the package/front end
+// Database for keeping track of Users
 "use strict";
 
 const Database = require('better-sqlite3')
-const db = new Database('./data/db/log.db')
+const db = new Database('./data/db/users.db')
 
 const stmt = db.prepare(
-    `SELECT name FROM sqlite_master WHERE type='table' and name='interactionlog';`
+    `SELECT name FROM sqlite_master WHERE type='table' and name='userslog';`
 );
 
 let row = stmt.get();
@@ -15,9 +15,8 @@ if (row === undefined) {
     console.log('Your database appears to be empty. I will initialize it now.');
 // Set a const that will contain your SQL commands to initialize the database.
     const sqlInit = `
-        CREATE TABLE interactionlog ( remoteaddr TEXT, remoteuser TEXT, time TEXT, method TEXT, 
-            url TEXT, protocol TEXT, httpversion TEXT, secure TEXT, status TEXT, referer TEXT, useragent TEXT );
-        INSERT INTO interactionlog (remoteaddr, remoteuser) VALUES ('192.168.1.1','exampleUser');
+        CREATE TABLE userslog ( userid TEXT, pass TEXT );
+        INSERT INTO userslog (userid, pass) VALUES ('exampleUser','examplePass');
     `;
 // Execute SQL commands that we just wrote above.
     db.exec(sqlInit);
