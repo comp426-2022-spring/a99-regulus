@@ -74,8 +74,10 @@ app.get('/app', (req, res) => {
 
 // POST endpoint to create a user in users.db
 app.post('/app/user/create', (req, res, next) => {
-    const userid = req.body.userid
-    const pass = req.body.pass
-    const stmt = db.prepare('INSERT INTO userslog (userid, pass) VALUES (?, ?)');
+    const userid = req.body.userid;
+    const pass = req.body.pass;
+    const stmt = usersdb.prepare('INSERT INTO userslog (userid, pass) VALUES (?, ?)');
     const info = stmt.run(userid, pass);
 })
+
+// 
