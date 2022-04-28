@@ -87,7 +87,14 @@ app.post("/app/user/update", (req, res) => {
         user: req.body.username,
         pass: req.body.password
     }
-    const stmt = db.prepare('UPDATE userinfo SET username = COALESCE(?,username), password = COALESCE(?,password) WHERE id = ?')
+    const stmt = db.prepare('UPDATE userinfo SET userid = COALESCE(?,userid), pass = COALESCE(?,pass) WHERE id = ?')
     const info = stmt.run(data.user, data.pass, req.params.id)
+    res.status(200).json(info)
+});
+
+// DELETE endpoint to remove a user
+app.delete("/app/user/delete/:id", (req, res) => {
+    const stmt = db.prepare('DELETE FROM userinfo WHERE id = ?')
+    const info = stmt.run(req.params.id)
     res.status(200).json(info)
 });
