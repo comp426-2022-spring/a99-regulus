@@ -78,6 +78,16 @@ app.post('/app/user/create', (req, res, next) => {
     const pass = req.body.pass;
     const stmt = usersdb.prepare('INSERT INTO userslog (userid, pass) VALUES (?, ?)');
     const info = stmt.run(userid, pass);
+    res.status(200).json(info)
 })
 
-// 
+// POST endpoint for updating a single user
+app.post("/app/user/update", (req, res) => {
+    let data = {
+        user: req.body.username,
+        pass: req.body.password
+    }
+    const stmt = db.prepare('UPDATE userinfo SET username = COALESCE(?,username), password = COALESCE(?,password) WHERE id = ?')
+    const info = stmt.run(data.user, data.pass, req.params.id)
+    res.status(200).json(info)
+});

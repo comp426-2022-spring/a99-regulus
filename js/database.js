@@ -15,9 +15,9 @@ if (row === undefined) {
     console.log('Your database appears to be empty. I will initialize it now.');
 // Set a const that will contain your SQL commands to initialize the database.
     const sqlInit = `
-        CREATE TABLE interactionlog ( remoteaddr TEXT, remoteuser TEXT, time TEXT, method TEXT, 
+        CREATE TABLE interactionlog ( id INTEGER PRIMARY KEY, remoteaddr TEXT, remoteuser TEXT, time TEXT, method TEXT, 
             url TEXT, protocol TEXT, httpversion TEXT, secure TEXT, status TEXT, referer TEXT, useragent TEXT );
-        INSERT INTO interactionlog (remoteaddr, remoteuser) VALUES ('192.168.1.1','exampleUser');
+        INSERT INTO interactionlog (id, remoteaddr, remoteuser) VALUES (1, '192.168.1.1','exampleUser');
     `;
 // Execute SQL commands that we just wrote above.
     db.exec(sqlInit);
