@@ -74,20 +74,22 @@ app.get('/app', (req, res) => {
 
 // POST endpoint to create a user in users.db
 app.post('/app/user/create', (req, res, next) => {
-    const userid = req.body.userid;
-    const pass = req.body.pass;
-    const stmt = usersdb.prepare('INSERT INTO userslog (userid, pass) VALUES (?, ?)');
-    const info = stmt.run(userid, pass);
+    let name = req.body.name;
+    let email = req.body.email;
+    let phone = req.body.phone;
+    const stmt = usersdb.prepare('INSERT INTO userslog (name, email, phone) VALUES (?, ?, ?)');
+    const info = stmt.run(name, email, phone);
     res.status(200).json(info)
 })
 
 // POST endpoint for updating a single user
 app.post("/app/user/update", (req, res) => {
     let data = {
-        user: req.body.username,
-        pass: req.body.password
+        name: req.body.name,
+        email: req.body.email,
+        phone: req.body.phone
     }
-    const stmt = db.prepare('UPDATE userinfo SET userid = COALESCE(?,userid), pass = COALESCE(?,pass) WHERE id = ?')
+    const stmt = db.prepare('UPDATE userinfo SET name = COALESCE(?,name), email = COALESCE(?,email), phone = COALESCE(?,phone) WHERE id = ?')
     const info = stmt.run(data.user, data.pass, req.params.id)
     res.status(200).json(info)
 });
