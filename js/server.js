@@ -77,8 +77,9 @@ app.post('/app/user/create', (req, res, next) => {
     let name = req.body.name;
     let email = req.body.email;
     let phone = req.body.phone;
-    const stmt = usersdb.prepare('INSERT INTO userslog (name, email, phone) VALUES (?, ?, ?)');
-    const info = stmt.run(name, email, phone);
+    let message = req.body.message;
+    const stmt = usersdb.prepare('INSERT INTO userslog (name, email, phone, message) VALUES (?, ?, ?, ?)');
+    const info = stmt.run(name, email, phone, message);
     res.status(200).json(info)
 })
 
@@ -87,10 +88,11 @@ app.post("/app/user/update", (req, res) => {
     let data = {
         name: req.body.name,
         email: req.body.email,
-        phone: req.body.phone
+        phone: req.body.phone,
+        message: req.body.message
     }
-    const stmt = db.prepare('UPDATE userinfo SET name = COALESCE(?,name), email = COALESCE(?,email), phone = COALESCE(?,phone) WHERE id = ?')
-    const info = stmt.run(data.user, data.pass, req.params.id)
+    const stmt = db.prepare('UPDATE userinfo SET name = COALESCE(?,name), email = COALESCE(?,email), phone = COALESCE(?,phone), message = COALESCE(?, message) WHERE id = ?')
+    const info = stmt.run(data.name, data.email, data.phone, data.message, req.params.id)
     res.status(200).json(info)
 });
 
