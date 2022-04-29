@@ -1,4 +1,5 @@
 // Put scripts here to interact with API
+console.log("we got to the scripts.js");
 
 const submitUser = document.getElementById("contactForm")
 			// Add event listener for submission of form
@@ -7,13 +8,14 @@ const submitUser = document.getElementById("contactForm")
 			async function submitForm(event) {
 				event.preventDefault();
 				
-				const endpoint = "app/user/create"
+				const endpoint = "/app/user/create/"
 				const url = document.baseURI+endpoint
 
 				const formEvent = event.currentTarget
 
 				try {
 					const formData = new FormData(formEvent);
+                    console.log(formData)
 					const response = await sendContact({ url, formData });
 
 					console.log(response);

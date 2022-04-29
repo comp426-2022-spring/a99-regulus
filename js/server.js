@@ -72,8 +72,13 @@ app.get('/app', (req, res) => {
     res.end('200 OK')
 })
 
+app.get('/app/log/access', (req, res) => {
+    const stmt = usersdb.prepare('SELECT * FROM userslog').all()
+    res.status(200).json(stmt)
+});
+
 // POST endpoint to create a user in users.db
-app.post('/app/user/create', (req, res, next) => {
+app.post('/contact.html/app/user/create', (req, res, next) => {
     // Info to be passed into db
     let userData = {
         name: req.body.name,
@@ -87,7 +92,7 @@ app.post('/app/user/create', (req, res, next) => {
     // Pass info into human readable JSON document
     let usersJson = fs.readFileSync("./data/log/users.json","utf-8");
     let users = JSON.parse(usersJson);
-    const arr = Array.from(users)
+    const arr = Array.from(users);
     arr.push(userData);
     usersJson = JSON.stringify(arr);
     fs.writeFileSync("./data/log/users.json",usersJson,"utf-8");
