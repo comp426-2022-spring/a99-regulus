@@ -2,7 +2,7 @@
 
 const submitUser = document.getElementById("contactForm")
 			// Add event listener for submission of form
-			coins.addEventListener("submit", submitForm)
+			submitUser.addEventListener("submit", submitForm)
 			// Create the submit handler
 			async function submitForm(event) {
 				event.preventDefault();

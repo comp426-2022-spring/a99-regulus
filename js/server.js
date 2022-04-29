@@ -74,13 +74,25 @@ app.get('/app', (req, res) => {
 
 // POST endpoint to create a user in users.db
 app.post('/app/user/create', (req, res, next) => {
-    let name = req.body.name;
-    let email = req.body.email;
-    let phone = req.body.phone;
-    let message = req.body.message;
+    // Info to be passed into db
+    let userData = {
+        name: req.body.name,
+        email: req.body.email,
+        phone: req.body.phone,
+        message: req.body.message
+    }
+    // Pass into db
     const stmt = usersdb.prepare('INSERT INTO userslog (name, email, phone, message) VALUES (?, ?, ?, ?)');
-    const info = stmt.run(name, email, phone, message);
-    res.status(200).json({"name":name, "email":email, "phone":phone, "message":message});
+    const info = stmt.run(userData.name, userData.email, userData.phone, userData.message);
+    // Pass info into human readable JSON document
+    let usersJson = fs.readFileSync("./data/log/users.json","utf-8");
+    let users = JSON.parse(usersJson);
+    const arr = Array.from(users)
+    arr.push(userData);
+    usersJson = JSON.stringify(arr);
+    fs.writeFileSync("./data/log/users.json",usersJson,"utf-8");
+    // Return status in JSON with contact info entered
+    res.status(200).json({"name":userData.name, "email":userData.email, "phone":userData.phone, "message":userData.message});
 })
 
 // POST endpoint for updating a single user
@@ -102,3 +114,13 @@ app.delete("/app/user/delete/:id", (req, res) => {
     const info = stmt.run(req.params.id)
     res.status(200).json(info)
 });
+
+app.use(function(req, res) {
+    res.setHeader('Content-Type', 'text/plain');
+    res.status(404).send('404 Not Found')
+})
+
+app.use((err, req, res, next) => {
+    console.error(err.stack)
+    res.status(500).send('Internal Server Error')
+})
