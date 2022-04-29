@@ -1,6 +1,6 @@
 // Put scripts here to interact with API
-console.log("we got to the scripts.js");
 
+// Interact with API endpoint /contact.html/app/user/create/ to log a new user
 const submitUser = document.getElementById("contactForm")
 			// Add event listener for submission of form
 			submitUser.addEventListener("submit", submitForm)
