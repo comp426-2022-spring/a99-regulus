@@ -4,7 +4,8 @@
   "description": "Regulus COMP 423 Final Project - COVID-19 Info Dashboard",
   "main": "./js/server.js",
   "scripts": {
-    "test": "node ./js/server.js"
+    "test": "node ./js/server.js --debug=true",
+    "start": "node ./js/server.js"
   },
   "repository": {
     "type": "git",

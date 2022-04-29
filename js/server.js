@@ -80,7 +80,7 @@ app.post('/app/user/create', (req, res, next) => {
     let message = req.body.message;
     const stmt = usersdb.prepare('INSERT INTO userslog (name, email, phone, message) VALUES (?, ?, ?, ?)');
     const info = stmt.run(name, email, phone, message);
-    res.status(200).json(info)
+    res.status(200).json({"name":name, "email":email, "phone":phone, "message":message});
 })
 
 // POST endpoint for updating a single user
