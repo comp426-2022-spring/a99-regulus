@@ -72,9 +72,26 @@ app.get('/app', (req, res) => {
     res.end('200 OK')
 })
 
+// Return users db if debug is true
+app.get('/app/log/users', (req, res) => {
+    if (args['debug'] == 'true') {
+        const stmt = usersdb.prepare('SELECT * FROM userslog').all()
+        res.status(200).json(stmt)
+    }
+    else {
+        res.status(200).end('debug disabled');
+    }
+});
+
+// Return access db if debug is true
 app.get('/app/log/access', (req, res) => {
-    const stmt = usersdb.prepare('SELECT * FROM userslog').all()
-    res.status(200).json(stmt)
+    if (args['debug'] == 'true') {
+        const stmt = db.prepare('SELECT * FROM interactionlog').all()
+        res.status(200).json(stmt)
+    }
+    else {
+        res.status(200).end('debug disabled');
+    }
 });
 
 // POST endpoint to create a user in users.db
@@ -101,6 +118,7 @@ app.post('/contact.html/app/user/create', (req, res, next) => {
 })
 
 // POST endpoint for updating a single user
+// NOT YET IMPLEMENTED/USED
 app.post("/app/user/update", (req, res) => {
     let data = {
         name: req.body.name,
@@ -114,17 +132,20 @@ app.post("/app/user/update", (req, res) => {
 });
 
 // DELETE endpoint to remove a user
+// NOT YET IMPLEMENTED/USED
 app.delete("/app/user/delete/:id", (req, res) => {
     const stmt = db.prepare('DELETE FROM userinfo WHERE id = ?')
     const info = stmt.run(req.params.id)
     res.status(200).json(info)
 });
 
+// Not found endpoint
 app.use(function(req, res) {
     res.setHeader('Content-Type', 'text/plain');
     res.status(404).send('404 Not Found')
 })
 
+// Internal error endpoint
 app.use((err, req, res, next) => {
     console.error(err.stack)
     res.status(500).send('Internal Server Error')
