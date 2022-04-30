@@ -17,8 +17,9 @@ const submitUser = document.getElementById("contactForm")
 					const formData = new FormData(formEvent);
                     console.log(formData)
 					const response = await sendContact({ url, formData });
-
+                    
 					console.log(response);
+                    location.reload();
 				} catch (error) {
 					console.log(error);
 				}
