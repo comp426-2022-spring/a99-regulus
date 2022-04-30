@@ -157,6 +157,10 @@ p {
   margin-bottom: 1rem;
 }
 
+twitter-timeline {
+
+}
+
 abbr[title],
 abbr[data-bs-original-title] {
   -webkit-text-decoration: underline dotted;
@@ -234,6 +238,15 @@ sup {
   top: -0.5em;
 }
 
+a.twitter-timeline {
+  width: 60%;
+  height: 60%;
+}
+
+.second-container {
+  padding: 200px;
+}
+
 a {
   color: #0d6efd;
   text-decoration: underline;
@@ -298,6 +311,7 @@ figure {
 
 img,
 svg {
+  border: #000;
   vertical-align: middle;
 }
 
