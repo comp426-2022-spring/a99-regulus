@@ -17,6 +17,14 @@ Design Lead : Pranav Vinaayak
 
 Documentation Managers : Dimitri Lavin / William Mullen
 
+## Run Instructions
+
+Command "npm install" will install all necessary dependencies.
+
+Command "npm run start" will run the app on port 5000. Accessable on a web browser at http://localhost:5000/
+
+Command "npm test" will run the app on port 5000 with the debug option set to true. This will allow access to the 'users' and 'access' databases.
+
 ## Planning Documentation
 
 https://github.com/comp426-2022-spring/a99-regulus/blob/main/docs/planning.md
