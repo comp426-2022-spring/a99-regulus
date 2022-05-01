@@ -8,15 +8,20 @@ A three-page information dashboard focusing on up-to-date Covid-19 statistics an
 ## Team Roles
 
 Front End Lead : Parks Cochrane
+
 Back End Lead : Yuhang Zhou
+
 Database Lead : Andy King
+
 Design Lead : Pranav Vinaayak
+
 Documentation Managers : Dimitri Lavin / William Mullen
 
 ## Planning Documentation
 
-link
+https://github.com/comp426-2022-spring/a99-regulus/blob/main/docs/planning.md
 
 ## API Documentation
 
+https://github.com/comp426-2022-spring/a99-regulus/blob/main/docs/documentation.md
 
