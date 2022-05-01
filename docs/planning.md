@@ -1,44 +1,50 @@
 # Planning
 
-## Features
+## Site Features
+
 
 ### Navigation Bar
-•	Home
+- [x]	Home
 
-•	Information 
+- [x]	Information 
 
-•	Subscribe
+- [x]	Subscribe
 
 ### Home
-•	Welcome to Site with News and Learn More buttons
+- [x]	Welcome to Site with News and Learn More buttons
 
-•	CDC Twitter Feed
+- [x]	CDC Twitter Feed
 
-•	Johns Hopkins Covid Map
+- [x]	Johns Hopkins Covid Map
 
-•	Top Covid Headlines from NYT, CNN, JHU
+- [x]	Top Covid Headlines from NYT, CNN, JHU
+
 
 ### Information
-•	Masking
+- [x]	Masking
 
-•	Testing
+- [x]	Testing
 
-•	Relevant links
+- [x]	Relevant links
 
-•	Team Bio
+- [ ]	Team Bio
 
-### Subscribe and Register Form
-•	Name
 
-•	Email
+### Subscription and Registration Form
+- [x]	Name
 
-•	Phone Number
+- [x]	Email
 
-•	Message
+- [x]	Phone Number
 
-•	Submit Button
+- [x]	Message
 
-•	Help Section
+- [x]	Submit Button
+
+- [ ] Connect to Database	
+
+- [ ]	Help Section
+
 
 ## Team Roles
 
