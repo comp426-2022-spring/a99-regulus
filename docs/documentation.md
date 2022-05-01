@@ -91,7 +91,7 @@ Connection: keep-alive
 Keep-Alive: timeout=5
 ```
 
-### /app/log/users (GET)
+### /app/log/access (GET)
 
 #### Request cURL
 
