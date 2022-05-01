@@ -28,7 +28,7 @@ about positivity rates in local areas such as Chapel Hill and Durham. This secti
 development. At the bottom of the page, you will find all of the contributors to the Covid Information
 Site.
 
-## Subscribe Page
+## Subscription Page
 The only feature on this page is a form for users to subscribe to a newsletter. Users provide their
 full name, email address, phone number, and an optional message to give any additional details. Once
 filled out, users can hit the submit button to finalize their subscription.
