@@ -133,3 +133,37 @@ ETag: W/"d-W2UDc1HK6w5aSNlj1/+ojQJx1UY"
 Date: Sun, 01 May 2022 20:35:09 GMT
 Connection: keep-alive
 Keep-Alive: timeout=5
+```
+
+### contact.html/app/user/create (POST)
+
+#### Request cURL
+
+```
+curl -X POST -H 'Content-Type: application/json' -d '{"name":"t", "email":"na", "phone":"1", "message":"na"}' http://localhost:5000/contact.html/app/user/create
+```
+
+#### Response body
+
+```
+{"name":"t","email":"na","phone":"1","message":"na"}
+```
+
+#### Response headers
+
+```
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 52
+ETag: W/"34-1ptYJDxzRwK3biUDuJVtuM2x7NE"
+Date: Sun, 01 May 2022 21:16:22 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+```
+
+## Endpoints not yet fully implemented:
+
+### /app/user/update (POST)
+### /app/user/delete (POST)
+
