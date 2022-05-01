@@ -20,6 +20,10 @@ From root directory:
 
 ## Run Instructions
 
+Command "npm run start" will run the app on port 5000. Accessable on a web browser at http://localhost:5000/
+
+Command "npm run test" will run the app on port 5000 with the debug option set to true. This will allow access to the 'users' and 'access' databases.
+
 #  API Documentation
 
 ## Endpoints
