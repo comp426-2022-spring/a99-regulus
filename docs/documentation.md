@@ -12,7 +12,10 @@ Follow these commands if you are in the root directory.
 You will need to install the following dependencies within server.\
 From root directory:
 ```
-
+    "better-sqlite3": "7.5.1",
+    "express": "4.18.0",
+    "minimist": "1.2.6",
+    "morgan": "1.10.0"
 ```
 
 ## Run Instructions
