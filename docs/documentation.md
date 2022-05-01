@@ -3,7 +3,7 @@
 ## Install Instructions
 ### Frontend
 Follow these instructions to run our Covid Information Site.\
-No installations are required to run the website.\
+No installations are required to run the frontend of the website.
 1. Clone the repository.
 2. Open index.html.
 3. Run index.html and start debugging.
