@@ -41,9 +41,11 @@
 
 - [x]	Submit Button
 
-- [ ] Connect to Database	
+- [x] Connect to Database	
 
 - [ ]	Help Section
+
+- [ ] User Registration
 
 
 ## Team Roles
