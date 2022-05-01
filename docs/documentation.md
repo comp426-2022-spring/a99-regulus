@@ -2,11 +2,13 @@
 
 ## Install Instructions
 ### Frontend
-You will need to install a few dependencies within client.\
-Follow these commands if you are in the root directory.
-```
-
-```
+Follow these instructions to run our Covid Information Site.\
+No installations are required to run the website.\
+1. Clone the repository.
+2. Open index.html.
+3. Run index.html and start debugging.
+4. When prompted to open the site with another application, choose 
+   Google Chrome.
 
 ### Backend
 You will need to install the following dependencies within server.\
