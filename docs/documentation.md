@@ -176,5 +176,7 @@ Keep-Alive: timeout=5
 ## Endpoints not yet fully implemented:
 
 ### /app/user/update (POST)
+#### Update user information database with given information
 ### /app/user/delete (POST)
+#### Delete a registered user from the database
 
