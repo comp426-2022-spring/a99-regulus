@@ -2,11 +2,13 @@
 
 ## Install Instructions
 ### Frontend
-You will need to install a few dependencies within client.\
-Follow these commands if you are in the root directory.
-```
-
-```
+Follow these instructions to run our Covid Information Site.\
+No installations are required to run the frontend of the website.
+1. Clone the repository.
+2. Open index.html.
+3. Run index.html and start debugging.
+4. When prompted to open the site with another application, choose 
+   Google Chrome.
 
 ### Backend
 You will need to install the following dependencies within server.\
@@ -19,6 +21,12 @@ From root directory:
 ```
 
 ## Run Instructions
+
+Command "npm install" will install all necessary dependencies.
+
+Command "npm run start" will run the app on port 5000. Accessable on a web browser at http://localhost:5000/
+
+Command "npm test" will run the app on port 5000 with the debug option set to true. This will allow access to the 'users' and 'access' databases.
 
 #  API Documentation
 
@@ -83,7 +91,7 @@ Connection: keep-alive
 Keep-Alive: timeout=5
 ```
 
-### /app/log/users (GET)
+### /app/log/access (GET)
 
 #### Request cURL
 
@@ -168,5 +176,7 @@ Keep-Alive: timeout=5
 ## Endpoints not yet fully implemented:
 
 ### /app/user/update (POST)
+#### Update user information database with given information
 ### /app/user/delete (POST)
+#### Delete a registered user from the database
 
