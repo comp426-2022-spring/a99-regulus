@@ -60,7 +60,9 @@ Design Lead : Pranav Vinaayak
 
 Documentation Managers : Dimitri Lavin / William Mullen
 
+## Google Doc of General Planning
 
+https://docs.google.com/document/d/1b8XvcgSbk05e5991T1t1jLnqn-Ah5Vf02QUrED387uw/edit?usp=sharing
 
 
 
